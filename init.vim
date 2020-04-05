@@ -64,6 +64,7 @@ Plug 'mbbill/undotree'
 call plug#end()
 
 " Basic
+let mapleader=' '
 set noerrorbells
 colorscheme xoria256
 set fileencoding=utf-8
@@ -138,6 +139,10 @@ nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
 nmap <C-p> :Files<CR>
 nmap <s-p> :Rg<CR>
+
+command! W w !sudo tee % > /dev/null
+noremap H ^
+noremap L $
 
 " Search mappings: These wi
 " ll make it so that going to the next one in a
