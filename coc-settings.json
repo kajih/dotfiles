@@ -7,12 +7,14 @@
     "json",
     "jsonc"
   ],
+  "diagnostic.errorSign": ">",
+  "diagnostic.warningSign": ">",
+  "rust-analyzer.serverPath": "/home/kajih/.cargo/bin/rust-analyzer",
+  "rust-analyzer.diagnostics.enable": false,
+  "rust-analyzer.files.exclude": [".git/"],
+  "rust-analyzer.cargo.allFeatures": true,
+
   "languageserver": {
-    "rust": {
-      "command": "rust-analyzer",
-      "filetypes": ["rust"],
-      "rootPatterns": ["Cargo.toml", ".git/"]
-    },
     "bash": {
       "command": "bash-language-server",
       "filetypes": ["sh"],

@@ -28,8 +28,8 @@ Plug 'jistr/vim-nerdtree-tabs'
 
 Plug 'sheerun/vim-polyglot'
 
-Plug 'Shougo/neoinclude.vim'
-Plug 'jsfaint/coc-neoinclude'
+Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh', }
+
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile' }
 Plug 'neoclide/jsonc.vim'
 
@@ -127,8 +127,15 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+" Buffer nav
+noremap <leader>z :bp<CR>
+noremap <leader>q :bp<CR>
+noremap <leader>x :bn<CR>
+noremap <leader>w :bn<CR>
+" Close buffer
+noremap <leader>c :bd<CR>
 
-nnoremap <leader>u :UndotreeShow<CR>
+noremap <leader>u :UndotreeShow<CR>
 
 nnoremap <Leader>pt :NERDTreeToggle<Enter>
 nnoremap <silent> <Leader>pv :NERDTreeFind<CR>
@@ -138,10 +145,9 @@ nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
 nmap <C-p> :Files<CR>
-nmap <s-p> :Rg<CR>
+nmap <C-P> :Rg<CR>
 
 command! W w !sudo tee % > /dev/null
-noremap H ^
 noremap L $
 
 " Search mappings: These wi
@@ -180,6 +186,41 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 set signcolumn=yes
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+
+let g:LanguageClient_serverCommands = { 'rust': ['rust-analyzer'], }
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_rootMarkers = {                                      
+    \ 'rust': ['.git/', 'Cargo.toml']                                          
+    \ }   
+
+let g:LanguageClient_diagnosticsDisplay = {
+    \     1: {
+    \         "name": "Error",
+    \         "texthl": "ALEError",
+    \         "signText": "-X",
+    \         "signTexthl": "ErrorMsg",
+    \     },
+    \     2: {
+    \         "name": "Warning",
+    \         "texthl": "ALEWarning",
+    \         "signText": "-!",
+    \         "signTexthl": "ALEWarningSign",
+    \     },
+    \     3: {
+    \         "name": "Information",
+    \         "texthl": "ALEInfo",
+    \         "signText": "-?",
+    \         "signTexthl": "ALEInfoSign",
+    \     },
+    \     4: {
+    \         "name": "Hint",
+    \         "texthl": "ALEInfo",
+    \         "signText": "->",
+    \         "signTexthl": "ALEInfoSign",
+    \     },
+    \ }
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
