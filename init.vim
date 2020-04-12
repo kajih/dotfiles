@@ -10,16 +10,17 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
-"-----------------------------------------
+" -----------------------------------------
 
-"-----------------------------------------
+" -----------------------------------------
 " Automatically install missing plugins on startup
-"-----------------------------------------
+" -----------------------------------------
 autocmd VimEnter *
       \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
       \|   PlugInstall --sync | q
       \| endif
-"-----------------------------------------
+
+" -----------------------------------------
 
 call plug#begin(expand('~/.config/nvim/plugged'))
 
@@ -194,11 +195,17 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 set signcolumn=yes
 
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" *****************************************************************************
+" LanguageClient-neovim
+" *****************************************************************************
+" Enable for debug purposes if needed:
+let g:LanguageClient_loggingFile = '/tmp/lc.log'
+let g:LanguageClient_loggingLevel = 'DEBUG'
+
 
 let g:LanguageClient_serverCommands = { 'rust': ['rust-analyzer'], }
 let g:LanguageClient_autoStart = 1
-let g:LanguageClient_rootMarkers = { 'rust': ['.git/', 'Cargo.toml'] }   
+let g:LanguageClient_rootMarkers = { 'rust': ['.git', 'Cargo.toml'] }   
 
 let g:LanguageClient_diagnosticsDisplay = {
   \   1: {
@@ -255,20 +262,25 @@ let g:echodoc#type = 'signature'
 "LSPC
 function SetLSPShortcuts()
   nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
-  nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
   nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
-  nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
   nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
   nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
   nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
   nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
   nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
   nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
+
+  nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+  nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+  nnoremap <silent> grn :call LanguageClient#textDocument_rename()<CR> 
+
+  nnoremap <F2> :call LanguageClient#textDocument_rename()<CR>
+  nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 endfunction()
 
 augroup LSP
   autocmd!
-  autocmd FileType cpp,c call SetLSPShortcuts()
+  autocmd FileType rust call SetLSPShortcuts()
 augroup END
 
 
