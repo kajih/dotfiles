@@ -68,6 +68,7 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'romainl/vim-devdocs'
 Plug 'mbbill/undotree'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -272,7 +273,7 @@ function SetLSPShortcuts()
 
   nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
   nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-  nnoremap <silent> grn :call LanguageClient#textDocument_rename()<CR> 
+  nnoremap <leader> rn :call LanguageClient#textDocument_rename()<CR> 
 
   nnoremap <F2> :call LanguageClient#textDocument_rename()<CR>
   nnoremap <F5> :call LanguageClient_contextMenu()<CR>
@@ -283,7 +284,17 @@ augroup LSP
   autocmd FileType rust call SetLSPShortcuts()
 augroup END
 
+" Plugins: Dev-icons ---------------------------------------------------------
 
+let g:WebDevIconsOS = 'Ubuntu'
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:DevIconsEnableFolderExtensionPatternMatching = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
 
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
 
 
