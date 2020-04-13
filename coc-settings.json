@@ -2,6 +2,9 @@
   "rust-analyzer.serverPath": "/home/kajih/.cargo/bin/rust-analyzer",
   "diagnostic.virtualText": true,
   "diagnostic.checkCurrentLine": true,
+  "rust-analyzer.updates.channel": "nightly",
+  "rust-analyzer.lruCapacity": 3,
+  "rust-analyzer.cargo.loadOutDirsFromCheck": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
     "markdown",
