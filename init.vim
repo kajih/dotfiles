@@ -169,13 +169,22 @@ nnoremap N Nzzzv
 nnoremap <esc> :noh<return><esc>
 
 " vim-airline
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols_branch = ''
+let g:airline_symbols_readonly = ''
+let g:airline_symbols_linenr = ''
 
 "
 " Some servers have issues with backup files, see #649.
@@ -203,17 +212,21 @@ set signcolumn=yes
 let g:LanguageClient_loggingFile = '/tmp/lc.log'
 let g:LanguageClient_loggingLevel = 'DEBUG'
 
-
-let g:LanguageClient_serverCommands = { 'rust': ['rust-analyzer'], }
 let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = { 'rust': ['rust-analyzer'], }
 let g:LanguageClient_rootMarkers = { 'rust': ['.git', 'Cargo.toml'] }   
+
+"highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+highlight ALEErrorSign guifg=Red
+highlight ALEWarningSign guifg=Yellow
+highlight ALEInfoSign guifg=White
 
 let g:LanguageClient_diagnosticsDisplay = {
   \   1: {
   \       "name": "Error",
   \       "texthl": "ALEError",
   \       "signText": "",
-  \       "signTexthl": "ErrorMsg",
+  \       "signTexthl": "ALEErrorSign",
   \   },
   \   2: {
   \       "name": "Warning",
