@@ -1,4 +1,7 @@
 {
+  "rust-analyzer.serverPath": "/home/kajih/.cargo/bin/rust-analyzer",
+  "diagnostic.virtualText": true,
+  "diagnostic.checkCurrentLine": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
     "markdown",
@@ -8,16 +11,19 @@
     "jsonc"
   ],
   "languageserver": {
-    "rust": {
-      "command": "rust-analyzer",
-      "filetypes": ["rust"],
-      "rootPatterns": ["Cargo.toml", ".git/"]
-    },
+    //    "rust-analyzer": {
+    //      "description": "Custom Loaded LanguageServer Rust-Analyzer",
+    //      "enable": true,
+    //      "command": "/home/kajih/.cargo/bin/rust-analyzer",
+    //      "filetypes": ["rust", "rs"],
+    //      "rootPatterns": ["Cargo.toml", ".git/"],
+    //      "trace.server": "verbose"
+    //    },
     "bash": {
       "command": "bash-language-server",
       "filetypes": ["sh"],
       "args": ["start"],
-      "ignoredRootPaths": ["~/"]
+      "ignoredRootPaths": ["~"]
     }
   }
 }

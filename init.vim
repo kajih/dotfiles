@@ -50,7 +50,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 
-"Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdcommenter'
 
 Plug 'samoshkin/vim-mergetool'
