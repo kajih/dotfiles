@@ -74,6 +74,14 @@ call plug#end()
 
 " Basic
 let mapleader=' '
+set clipboard+=unnamedplus
+set cursorline
+"set cursorcolumn
+"set nocursorcolumn
+
+highlight CursorLine ctermbg=Yellow cterm=bold guibg=#2b2b2b
+highlight CursorColumn ctermbg=Yellow cterm=bold guibg=#2b2b2b
+
 set noerrorbells
 colorscheme xoria256
 set fileencoding=utf-8
