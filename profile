@@ -11,6 +11,7 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en
+export EDITOR=nvim
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
