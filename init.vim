@@ -125,6 +125,8 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 
+filetype plugin on
+
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 
 " RipGrep
@@ -147,18 +149,18 @@ nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 " Buffer nav
 noremap <leader>z :bp<CR>
-noremap <leader>q :bp<CR>
+"noremap <leader>q :bp<CR>
 noremap <leader>x :bn<CR>
-noremap <leader>w :bn<CR>
+"noremap <leader>w :bn<CR>
 " Close buffer
 noremap <leader>c :bd<CR>
 
 noremap <leader>u :UndotreeShow<CR>
 
-nnoremap <Leader>pt :NERDTreeToggle<Enter>
+nnoremap <leader>pt :NERDTreeToggle<Enter>
 nnoremap <silent> <Leader>pv :NERDTreeFind<CR>
 
-nnoremap <Leader>ps :Rg<SPACE>
+nnoremap <leader>ps :Rg<SPACE>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
@@ -166,6 +168,7 @@ nmap <C-p> :Files<CR>
 nmap <C-P> :Rg<CR>
 
 command! W w !sudo tee % > /dev/null
+noremap H ^
 noremap L $
 
 " Search mappings: These wi
@@ -234,6 +237,8 @@ let g:LanguageClient_diagnosticsDisplay = {
   \   },
   \ }
 
+" Deoplete (general auto-complete)
+let g:deoplete#enable_at_startup = 1
 call deoplete#enable()
 call deoplete#custom#source('LanguageClient', 'min_pattern_length', 2)
 
@@ -274,6 +279,7 @@ function SetLSPShortcuts()
   nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
   nnoremap <leader> rn :call LanguageClient#textDocument_rename()<CR> 
 
+  nnoremap <leader>qf :call LanguageClient#textDocument_codeAction()<CR>
   nnoremap <F2> :call LanguageClient#textDocument_rename()<CR>
   nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 endfunction()
@@ -344,3 +350,28 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+
