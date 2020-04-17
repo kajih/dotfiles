@@ -83,7 +83,12 @@ highlight CursorLine ctermbg=Yellow cterm=bold guibg=#2b2b2b
 highlight CursorColumn ctermbg=Yellow cterm=bold guibg=#2b2b2b
 
 set noerrorbells
+
 colorscheme xoria256
+if &diff
+	colorscheme sol
+endif
+
 set fileencoding=utf-8
 set termguicolors
 set hidden
@@ -204,36 +209,55 @@ let g:LanguageClient_loggingLevel = 'DEBUG'
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = { 'rust': ['rust-analyzer'], }
 let g:LanguageClient_rootMarkers = { 'rust': ['.git', 'Cargo.toml'] }   
+let g:LanguageClient_diagnosticsSignsMax = 10
+let g:LanguageClient_useFloatingHover = 1
+let g:LanguageClient_useVirtualText = "All"
+let g:LanguageClient_hasSnippetSupport = 1
+let g:LanguageClient_changeThrottle = 0.5
+let g:LanguageClient_virtualTextPrefix = "    // "
+let g:LanguageClient_diagnosticsList = "Location"
+let g:LanguageClient_selectionUI = "location-list"
+let g:LanguageClient_hoverpreview = "Always"
+
 
 "highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+highlight ALEError guifg=Red
 highlight ALEErrorSign guifg=Red
 highlight ALEWarningSign guifg=Yellow
 highlight ALEInfoSign guifg=White
-
+" Custom color highlight for virtual text
+highlight LCErrorHighlight  ctermfg=203 guifg=#FF6E6E
+highlight LCWarnHighlight   ctermfg=215 guifg=#FFB86C
+highlight LCHintHighlight   ctermfg=142 guifg=#ABB2BF
+highlight LCInfoHighlight   ctermfg=239 guifg=#44475A
 let g:LanguageClient_diagnosticsDisplay = {
   \   1: {
   \       "name": "Error",
   \       "texthl": "ALEError",
   \       "signText": "",
   \       "signTexthl": "ALEErrorSign",
+  \       "virtualTexthl": "LCErrorHighlight",
   \   },
   \   2: {
   \       "name": "Warning",
   \       "texthl": "ALEWarning",
   \       "signText": "",
   \       "signTexthl": "ALEWarningSign",
+  \       "virtualTexthl": "LCWarnHighlight",
   \   },
   \   3: {
   \       "name": "Information",
   \       "texthl": "ALEInfo",
   \       "signText": "",
   \       "signTexthl": "ALEInfoSign",
+  \       "virtualTexthl": "LCInfoHighlight",
   \   },
   \   4: {
   \       "name": "Hint",
   \       "texthl": "ALEInfo",
   \       "signText": "",
   \       "signTexthl": "ALEInfoSign",
+  \       "virtualTexthl": "LCHinthighlight",
   \   },
   \ }
 
