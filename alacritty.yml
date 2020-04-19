@@ -109,7 +109,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: JetBrains Mono
+    family: JetBrainsMono NF
+    #family JetBrains Mono
     #family: monospace
     #family: "Fira Code"
     #family: Iosevka
@@ -124,7 +125,8 @@ font:
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-    family: JetBrains Mono
+    family: JetBrainsMono NF
+    #family: JetBrains Mono
     #family: "Fira Code"
     #family: Iosevka
 
@@ -138,13 +140,14 @@ font:
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
     ##family: monospace
-    family: JetBrains Mono
+    family: JetBrainsMono NF
+    #family: JetBrains Mono
 
     # The `style` can be specified to pick a specific face.
     style: Italic
 
   # Bold italic font face
-  #bold_italic:
+  bold_italic:
     # Font family
     #
     # If the bold italic family is not specified, it will fall back to the
@@ -152,10 +155,11 @@ font:
     #family: monospace
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
+    family: JetBrainsMono NF
+    style: Bold Italic
 
   # Point size
-  size: 12.0
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
