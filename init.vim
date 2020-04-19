@@ -78,15 +78,19 @@ set cursorline
 "set cursorcolumn
 "set nocursorcolumn
 
-highlight CursorLine ctermbg=Yellow cterm=bold guibg=#2b2b2b
-highlight CursorColumn ctermbg=Yellow cterm=bold guibg=#2b2b2b
-
 set noerrorbells
 
-colorscheme xoria256
+"colorscheme xoria256
+colorscheme znake
 if &diff
 	colorscheme sol
 endif
+
+"highlight CursorLine ctermbg=Yellow cterm=bold guibg=#2b2b2b
+"highlight CursorColumn ctermbg=Yellow cterm=bold guibg=#2b2b2b
+"highlight CocFloating ctermbg=8
+"highlight Quote ctermbg=109 guifg=#83a598
+"highlight Pmenu ctermfg=0 ctermbg=250 guifg=#000000 guibg=#404050
 
 set fileencoding=utf-8
 set termguicolors
