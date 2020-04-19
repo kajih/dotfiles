@@ -14,6 +14,13 @@
     "json",
     "jsonc"
   ],
+  "diagnostic.errorSign": ">",
+  "diagnostic.warningSign": ">",
+  "rust-analyzer.serverPath": "/home/kajih/.cargo/bin/rust-analyzer",
+  "rust-analyzer.diagnostics.enable": false,
+  "rust-analyzer.files.exclude": [".git/"],
+  "rust-analyzer.cargo.allFeatures": true,
+
   "languageserver": {
     //    "rust-analyzer": {
     //      "description": "Custom Loaded LanguageServer Rust-Analyzer",
