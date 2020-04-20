@@ -86,11 +86,15 @@ if &diff
 	colorscheme sol
 endif
 
+"highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 "highlight CursorLine ctermbg=Yellow cterm=bold guibg=#2b2b2b
 "highlight CursorColumn ctermbg=Yellow cterm=bold guibg=#2b2b2b
 "highlight CocFloating ctermbg=8
 "highlight Quote ctermbg=109 guifg=#83a598
 "highlight Pmenu ctermfg=0 ctermbg=250 guifg=#000000 guibg=#404050
+
+"Default values
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
 
 set fileencoding=utf-8
 set termguicolors
@@ -108,8 +112,6 @@ set nobackup
 set nowritebackup
 set undodir=~/.config/nvim/undodir
 set undofile
-
-" highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Searching
 set hlsearch
