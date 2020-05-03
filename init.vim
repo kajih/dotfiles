@@ -69,6 +69,14 @@ Plug 'mbbill/undotree'
 
 Plug 'ryanoasis/vim-devicons'
 
+" GraphViz
+Plug 'wannesm/wmgraphviz.vim'
+
+" Markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim'
+
 call plug#end()
 
 " Basic
