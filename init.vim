@@ -70,7 +70,8 @@ Plug 'mbbill/undotree'
 Plug 'ryanoasis/vim-devicons'
 
 " GraphViz
-Plug 'wannesm/wmgraphviz.vim'
+" Plug 'wannesm/wmgraphviz.vim'
+Plug 'liuchengxu/graphviz.vim'
 
 " Markdown
 Plug 'godlygeek/tabular'
