@@ -78,6 +78,8 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim'
 
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
 
 " Basic
