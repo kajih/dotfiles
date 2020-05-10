@@ -5,6 +5,7 @@
   "rust-analyzer.lruCapacity": 3,
 
   "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.virtualTextPrefix": "       // -- ",
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.formatOnSaveFiletypes": [
