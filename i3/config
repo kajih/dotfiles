@@ -186,7 +186,9 @@ bar {
 }
 
 # Custom Startup
-#
+
+for_window [class="jetbrains-idea" title="win0"] floating enable;
+
 #exec --no-startup-id compton
 #exec --no-startup-id flashfocus
 exec --no-startup-id nitrogen --restore
