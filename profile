@@ -15,41 +15,48 @@ export EDITOR=nvim
 export TERMINAL=alacritty
 export KEYTIMEOUT=1 # ZSH VI Mode
 
+export WSL_VERSION=$(wsl.exe -l -v | grep -a '[*]' | sed 's/[^0-9]*//g')
+export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
+  # include .bashrc if it exists
+  if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+  fi
 fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+  PATH="$HOME/bin:$PATH"
 fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+  PATH="$HOME/.local/bin:$PATH"
 fi
 
 if [ -f "$HOME/.aliases" ] ; then
-    source $HOME/.aliases
+  source $HOME/.aliases
+fi
+
+if [ -d "/usr/local/go" ] ; then
+  PATH="$PATH:/usr/local/go/bin"
 fi
 
 # set PATH so it includes user's private go if it exists
 if [ -d "$HOME/go" ] ; then
-    GOPATH="$HOME/go"
-    PATH="$PATH:$GOPATH/bin"
+  GOPATH="$HOME/go"
+  PATH="$PATH:$GOPATH/bin"
 fi
 
 # RUST
 if [ -d "$HOME/.cargo" ] ; then
-	export PATH="$HOME/.cargo/bin:$PATH"
+  export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 if [ -x $(command -v neofetch) ]
 then
-        neofetch
+  neofetch
 fi
 
