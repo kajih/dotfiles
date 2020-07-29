@@ -8,7 +8,7 @@ fi
 apt update
 apt install -y curl
 
-curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
 
 add-apt-repository -y -n ppa:mmstick76/alacritty
 add-apt-repository -y -n ppa:neovim-ppa/unstable
