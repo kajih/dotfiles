@@ -135,7 +135,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 workspace $ws1 output eDP-1-1
 workspace $ws2 output eDP-1-1
 workspace $ws3 output eDP-1-1
-workspace $ws4 output DVI-I-2-1 
+workspace $ws4 output DVI-I-2-1
 workspace $ws5 output DVI-I-2-1
 workspace $ws6 output DVI-I-2-1
 workspace $ws7 output DVI-I-3-2
@@ -143,7 +143,8 @@ workspace $ws8 output DVI-I-3-2
 workspace $ws9 output DVI-I-3-2
 workspace $ws10 output eDP-1-1
 
-bindsym $mod+m exec --no-startup-id xrandr --output eDP-1-1 --auto --output DVI-I-3-2 --auto --left-of eDP-1-1 --output DVI-I-2-1 --auto --left-of DVI-I-3-2
+#bindsym $mod+m exec --no-startup-id xrandr --output eDP-1-1 --auto --output DVI-I-3-2 --auto --left-of eDP-1-1 --output DVI-I-2-1 --auto --left-of DVI-I-3-2
+bindsym $mod+m exec --no-startup-id xrandr --output eDP-1-1 --auto --output DVI-I-3-2 --auto --left-of DVI-I-2-1 --output DVI-I-2-1 --auto --left-of eDP-1-1
 #
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -151,6 +152,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym Scroll_Lock exec --no-startup-id i3lock-fancy
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
