@@ -65,7 +65,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'airblade/vim-gitgutter'
 
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 Plug 'romainl/vim-devdocs'
 Plug 'mbbill/undotree'
@@ -88,10 +89,15 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 call plug#end()
 
+noremap ö [
+noremap ä ]
+noremap öö [[
+noremap ää ]]
+
 let g:coc_global_extensions = ["coc-explorer",
             \ "coc-json",
             \ "coc-prettier",
-            \ "coc-ultisnips"]
+            \ "coc-snippets" ]
 
 " Basic
 let g:mapleader = "\<Space>"
@@ -113,6 +119,7 @@ source ~/.dotfiles/vim-cfgs/coc.vim
 source ~/.dotfiles/vim-cfgs/cocexp.vim
 source ~/.dotfiles/vim-cfgs/statusbar.vim
 source ~/.dotfiles/vim-cfgs/ultisnips.vim
+source ~/.dotfiles/vim-cfgs/snippets.vim
 
 "colorscheme xoria256
 colorscheme znake
@@ -321,4 +328,5 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
+
 
