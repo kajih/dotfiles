@@ -87,6 +87,8 @@ Plug 'bronson/vim-trailing-whitespace'
 
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 call plug#end()
 
 noremap ö [
