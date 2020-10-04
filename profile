@@ -15,8 +15,10 @@ export EDITOR=nvim
 export TERMINAL=alacritty
 export KEYTIMEOUT=1 # ZSH VI Mode
 
-export WSL_VERSION=$(wsl.exe -l -v | grep -a '[*]' | sed 's/[^0-9]*//g')
-export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
+if command -v wsl.exe &> /dev/null; then
+  export WSL_VERSION=$(wsl.exe -l -v | grep -a '[*]' | sed 's/[^0-9]*//g')
+  export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
+fi
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
