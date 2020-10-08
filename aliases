@@ -4,4 +4,4 @@ alias free='free -h'
 alias peaclock='peaclock --config-dir ~/.config/peaclock'
 alias pd='pd=pushd'
 alias pdd='dirs -v'
-
+alias dc='docker-compose'

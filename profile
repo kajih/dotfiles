@@ -42,6 +42,10 @@ if [ -f "$HOME/.aliases" ] ; then
   source $HOME/.aliases
 fi
 
+if [ -f "$HOME/.aliases.local" ] ; then
+  source $HOME/.aliases.local
+fi
+
 if [ -d "/usr/local/go" ] ; then
   PATH="$PATH:/usr/local/go/bin"
 fi
