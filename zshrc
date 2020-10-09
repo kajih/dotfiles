@@ -29,6 +29,7 @@ if ! zgen saved; then
     zgen load chrissicool/zsh-256color
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/sudo
+    zgen oh-my-zsh plugins/vi-mode
     zgen oh-my-zsh plugins/command-not-found
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load romkatv/powerlevel10k powerlevel10k
