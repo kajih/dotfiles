@@ -6,7 +6,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 apt update
-curl -L https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip -o /tmp/monofont.zip
+curl -L https://download.jetbrains.com/fonts/JetBrainsMono-2.001.zip -o /tmp/monofont.zip
 
 apt install -y fonts-noto-color-emoji unifont
 dpkg-reconfigure fontconfig-config
