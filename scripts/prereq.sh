@@ -19,6 +19,6 @@ apt install -y nodejs alacritty neovim golang-go zsh fonts-firacode \
 
 python3 -m pip install --upgrade pynvim
 npm install -g neovim
-
+npm install -g yarn
 
 
