@@ -123,6 +123,7 @@ source ~/.dotfiles/vim-cfgs/cocexp.vim
 source ~/.dotfiles/vim-cfgs/statusbar.vim
 source ~/.dotfiles/vim-cfgs/ultisnips.vim
 source ~/.dotfiles/vim-cfgs/snippets.vim
+source ~/.dotfiles/vim-cfgs/fugitive.vim
 
 "colorscheme xoria256
 colorscheme znake
