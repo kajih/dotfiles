@@ -1,5 +1,5 @@
 " Conflict Resolution
-nnoremap <leader>gd :Gvdiff
-nnoremap gdh :diffget //2
-nnoremap gdl :diffget //3
+nnoremap <leader>gd :Gvdiff<CR>
+nnoremap <leader>gdh :diffget //2
+nnoremap <leader>gdl :diffget //3
 
