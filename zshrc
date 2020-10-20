@@ -14,8 +14,6 @@ HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=5000
 
-bindkey -v
-
 # End of lines configured by zsh-newuser-install
 source "${HOME}/.dotfiles/zgen/zgen.zsh"
 
@@ -28,8 +26,8 @@ if ! zgen saved; then
     # plugins
     zgen load chrissicool/zsh-256color
     zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/vi-mode
+    zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/command-not-found
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load romkatv/powerlevel10k powerlevel10k
@@ -52,4 +50,5 @@ compinit
 
 # End of lines added by compinstall
 
+bindkey -v
 
