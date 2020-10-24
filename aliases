@@ -1,4 +1,5 @@
 alias vim=nvim
+alias vimu='nvim -u NONE'
 alias aaa='figlet -w 120 Arrange, Act, Assert'
 alias free='free -h'
 alias peaclock='peaclock --config-dir ~/.config/peaclock'
