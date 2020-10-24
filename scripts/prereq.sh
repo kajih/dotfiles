@@ -15,7 +15,7 @@ add-apt-repository -y -n ppa:neovim-ppa/unstable
 add-apt-repository -y -u ppa:longsleep/golang-backports
 
 apt install -y nodejs alacritty neovim golang-go zsh fonts-firacode \
-  tmux neofetch ssh python3-pip mlocate
+  tmux neofetch ssh python3-pip 
 
 python3 -m pip install --upgrade pynvim
 npm install -g neovim
