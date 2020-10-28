@@ -6,6 +6,7 @@
   "rust-analyzer.inlayHints.chainingHints": true,
   "rust-analyzer.inlayHints.refreshOnInsertMode": true,
   "rust-analyzer.diagnostics.enable": false,
+  "rust-analyzer.diagnostics.enableExperimental": true,
   "rust-analyzer.files.exclude": [".git/"],
   "rust-analyzer.cargo.allFeatures": true,
 
@@ -22,6 +23,9 @@
   ],
 
   "codeLens.enable": true,
+  "rust-analyzer.lens.run": true,
+  "rust-analyzer.lens.implementations": true,
+  "rust-analyzer.lens.methodReferences": true, // default false
 
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
@@ -29,10 +33,10 @@
   "diagnostic.checkCurrentLine": false,
   "diagnostic.messageTarget": "echo",
 
-  "diagnostic.infoSign": "ღ",
-  "diagnostic.hintSign": "ஐ",
-  "diagnostic.warningSign": "⚠",
-  "diagnostic.errorSign": "✖",
+  "diagnostic.infoSign": "i",
+  "diagnostic.hintSign": "h",
+  "diagnostic.warningSign": "w",
+  "diagnostic.errorSign": "E",
   "diagnostic.enable": true,
   "diagnostic.signOffset": 9999999,
   "diagnostic.highlightOffset": 9999999,
