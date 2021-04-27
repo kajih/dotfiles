@@ -35,6 +35,11 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin/local" ] ; then
+  PATH="$HOME/bin/local:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
   PATH="$HOME/.local/bin:$PATH"
 fi
@@ -61,6 +66,8 @@ fi
 if [ -d "$HOME/.cargo" ] ; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
+
+export PATH="$PATH:$HOME/.local/share/gem/ruby/2.7.0/bin"
 
 if [ -x $(command -v neofetch) ]
 then
