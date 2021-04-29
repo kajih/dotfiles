@@ -30,14 +30,7 @@ ln -s $(pwd)/profile ~/.bash_profile
 ln -s $(pwd)/aliases ~/.aliases
 
 # -NVIM
-mkdir -p ~/.config/nvim/plugged
-[[ -f ~/.config/nvim/init.vim ]] && mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak
-ln -s $(pwd)/init.vim ~/.config/nvim/init.vim
-
-if [[ -f ~/.config/nvim/local_bundles.vim ]]
-then
-    mv ~/.config/nvim/local_bundles.vim ~/.config/nvim/local_bundles.vim.bak
-fi
+[[ ! -f ~/.config/nvim ]] && ln -s $(pwd)/nvim ~/.config/nvim
 
 ln -s $(pwd)/local_bundles.vim ~/.config/nvim/local_bundles.vim
 
