@@ -304,4 +304,6 @@ set -g status-keys vi
 set -g mode-keys vi
 
 bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
-  
+run-shell ~/.tmux/plugins/tmux-wormhole/tmux-wormhole.tmux
+
+

@@ -1,6 +1,7 @@
 
 # source $HOME/.profile
 source ~/.aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -51,4 +52,7 @@ compinit
 # End of lines added by compinstall
 
 bindkey -v
+
+[[ $(command -v zoxide) ]] && eval "$(zoxide init zsh)"
+
 
